@@ -1,44 +1,36 @@
+<html>
 <head>
-  <title>Anagrafica Utente</title>
+<title>Dati utente</title>
 </head>
 <body>
-  <h2>Inserisci i tuoi dati:</h2>
-  
-  <input type="text" id="nome"><br>
-  <input type="text" id="cognome"><br>
-  <input type="text" id="indirizzo"><br>
-  <input type="text" id="citta"><br>
-  <input type="text" id="cap"><br>
-  <input type="date" id="dataNascita"><br><br>
 
-  <button onclick="mostra_anagrafica()">Invia</button>
+<h2>Inserisci i tuoi dati</h2>
 
-  <h3>Risultato:</h3>
-  <div id="output"></div>
+Nome: <input type="text" id="nome"> <br><br>
+Cognome: <input type="text" id="cognome"> <br><br>
+Indirizzo: <input type="text" id="indirizzo"> <br><br>
 
-  <script>
-    function mostraAnagrafica() {
-      var nome = document.getElementById("nome").value;
-      var cognome = document.getElementById("cognome").value;
-      var indirizzo = document.getElementById("indirizzo").value;
-      var citta = document.getElementById("citta").value;
-      var cap = document.getElementById("cap").value;
-      var data = document.getElementById("dataNascita").value;
+<button onclick="mostraDati()">Mostra</button>
 
-      var anno = new Date(data).getFullYear();
+<div id="risultato" style="
+    position:absolute;
+    right:50px;
+    top:50px;
+    border:1px solid black;
+    padding:10px;
+    width:200px;">
+    <h3>Dati inseriti:</h3>
+</div>
 
-      var generazione = "";
+<script>
+function mostraDati() {
+    var nome = document.getElementById("nome").value;
+    var cognome = document.getElementById("cognome").value;
+    var indirizzo = document.getElementById("indirizzo").value;
 
-      if (anno >= 1901 && anno <= 1927) generazione = "Greatest Generation";
-      else if (anno >= 1928 && anno <= 1945) generazione = "Generazione Silenziosa";
-      else if (anno >= 1946 && anno <= 1964) generazione = "Baby Boomers";
-      else if (anno >= 1965 && anno <= 1980) generazione = "Generazione X";
-      else if (anno >= 1981 && anno <= 1996) generazione = "Millennials";
-      else if (anno >= 1997 && anno <= 2012) generazione = "Generazione Z";
-      else if (anno >= 2013) generazione = "Generazione Alpha";
-      else generazione = "Anno non valido";
+   <script type="text/javascript">
 
-       function controlla() {     
+   function controlla() {     
 
         for(i=0;i<document.getElementsByName("colori").length;i++) {
 
@@ -53,34 +45,30 @@
     }
 
    </script>
-
- </head>
-
  <body>
 
     <div style="margin-left:100px;">
 
-        <input type="radio" name="genere" value="maschio">maschio<br>
+        <input type="radio" name="colori" value="rosso">Rosso<br>
 
-        <input type="radio" name="genere" value="femmina">femmina<br>
+        <input type="radio" name="colori" value="verde">Verde<br>
 
-        <input type="radio" name="genere" value="altro">altro<br>
+        <input type="radio" name="colori" value="bianco">Bianco<br>
 
         <input type="button" onclick="controlla();" value="Invia">
 
     </div>
 
    <p id="risp"></p>
+  </body>
 
-      document.getElementById("output").innerHTML =
-        "<b>Nome:</b> " + nome + "<br>" +
-        "<b>Cognome:</b> " + cognome + "<br>" +
-        "<b>Indirizzo:</b> " + indirizzo + "<br>" +
-        "<b>Città:</b> " + citta + "<br>" +
-        "<b>CAP:</b> " + cap + "<br>" +
-        "<b>Anno di nascita:</b> " + anno + "<br>" +
-        "<b>Generazione:</b> " + generazione;
-    }
-  </script>
+    document.getElementById("risultato").innerHTML =
+        "<h3>Dati inseriti:</h3>" +
+        "Nome: " + nome + "<br>" +
+        "Cognome: " + cognome + "<br>" +
+        "Indirizzo: " + indirizzo;
+}
+</script>
+
 </body>
 </html>
